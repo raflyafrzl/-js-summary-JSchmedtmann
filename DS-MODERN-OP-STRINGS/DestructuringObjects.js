@@ -37,6 +37,9 @@ const restaurant = {
       );
     }
   },
+  orderPasta: function (ing, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing}, ${ing2}, and ${ing3}`);
+  },
 };
 //Mempassing object sebagai argumen yang akan dilemparkan ke Method restaurant
 restaurant.orderDelivery({
@@ -81,3 +84,7 @@ const {
 } = restaurant.openingHours;
 
 console.log(buka, tutup);
+
+const ingredients = [prompt("1"), prompt("2"), prompt("3")];
+
+restaurant.orderPasta(...ingredients);

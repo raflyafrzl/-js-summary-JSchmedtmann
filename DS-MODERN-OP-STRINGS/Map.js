@@ -10,6 +10,8 @@ rest.set("Nama", "Muhammad Rafly Afrizal Pratama");
 rest.set(true, "Dia Laki Laki");
 rest.set(123, "Bilangan ");
 
+//Mengupdate nilai Map berdasarkan Key nya
+rest.set(123, "Angka ");
 console.log(rest.has(true));
 console.log(rest.get(123));
 

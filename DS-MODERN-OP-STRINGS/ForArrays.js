@@ -52,6 +52,8 @@ const restaurant = {
 
 const arr = ["Rafly", "Dudung", "Maman", "Aceng", "Acung"];
 
+console.log([4, 2, 3, 1]);
+
 //tanpa mendapatkan indexnya
 for (const el of arr) {
   console.log(el);

@@ -11,12 +11,9 @@ button.addEventListener("click", function () {
   console.log(splitToArr);
   let test = 1;
   for (const s of splitToArr) {
+    const arr = s.trim().toLowerCase().split("_");
     console.log(
-      `${s.slice(0, s.indexOf("_")).replace(" ", "")}${s[
-        s.indexOf("_") + 1
-      ].toUpperCase()}${s
-        .slice(s.indexOf("_") + 2)
-        .toLocaleLowerCase()}${"✅".repeat(test++)}`
+      `${arr[0]}${arr[1].replace(arr[1][0], arr[1][0].toUpperCase())} `
     );
   }
 });

@@ -1,7 +1,7 @@
 const flight = "GI123";
 const rafly = {
   passName: "Rafly Afrizal",
-  passport: 121254125125,
+  passport: 1212541253335,
 };
 
 const checkIn = function (flightNum, passenger) {

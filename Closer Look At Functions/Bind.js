@@ -35,3 +35,15 @@ console.log(pertambahan(10, 20));
 const pertambahanBerbasis2 = pertambahan.bind(null, 2);
 
 console.log(pertambahanBerbasis2(10));
+
+//sederhanakan dengan function mengembalikan function
+
+const funLuar = (value) => {
+  return (rate) => {
+    return value + value + rate;
+  };
+};
+
+const getFunLuar = funLuar(23);
+
+console.log(getFunLuar(10));

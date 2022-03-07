@@ -15,4 +15,4 @@ const secureBooking = function () {
 const booker = secureBooking();
 
 //namun saat pemanggilan disini, variable test masih bisa digunakan
-console.dir(secureBooking());
+console.dir(booker);

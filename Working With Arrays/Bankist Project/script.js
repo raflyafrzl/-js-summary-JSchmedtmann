@@ -74,3 +74,31 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+//Slice Method
+
+// let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+// console.log(arr.slice(2));
+// //bisa juga negative number
+// console.log(arr.slice(-1)); //index terakhir
+// console.log(arr.slice(1, -2)); //dari index satu sampe 2 terakhir
+
+// //SPLICE
+// const arr2 = [1, 2, 3, 4, 5, 6];
+// console.log(
+//   arr2.splice(1, 2)
+// ); /* memangkas dari index ke 1 dan 2 nilai array yang ingin dihpaus  */
+// console.log(arr2); /* hasil akhir menjadi 1,4,5,6  */
+
+//reverse
+
+/* END SECTION 1 */
+
+/* The New At Method */
+
+const arr = [1, 2, 3];
+
+console.log(arr.at(0)); //mengambil data pada index ke - 0
+console.log(arr.at(-1)); //dengan at kita bisa menggunakan -1 untuk mengambil index terakhir
+
+/*  For Each Method  */

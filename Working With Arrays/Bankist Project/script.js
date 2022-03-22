@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 //Slice Method
@@ -102,3 +102,24 @@ console.log(arr.at(0)); //mengambil data pada index ke - 0
 console.log(arr.at(-1)); //dengan at kita bisa menggunakan -1 untuk mengambil index terakhir
 
 /*  For Each Method  */
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const [index, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`You deposited  ${movement}`);
+  } else {
+    console.log(`You withdrew ${-1 * movement}`);
+  }
+}
+console.log(`=========With Foreach=========`);
+
+// With forEach array
+
+movements.forEach(function (movement, index, fullArray) {
+  if (movement > 0) {
+    console.log(`You deposited  ${movement}`);
+  } else {
+    console.log(`You withdrew ${-1 * movement}`);
+  }
+});

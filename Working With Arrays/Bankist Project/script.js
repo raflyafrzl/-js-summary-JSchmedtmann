@@ -33,7 +33,7 @@ const account4 = {
   pin: 4444,
 };
 
-const accounts = [account1, account2, account3, account4];
+let accounts = [account1, account2, account3, account4];
 
 // Elements
 const labelWelcome = document.querySelector('.welcome');
@@ -115,39 +115,54 @@ displayMovements(account1.movements);
 
 const arr = [1, 2, 3];
 
-console.log(arr.at(0)); //mengambil data pada index ke - 0
-console.log(arr.at(-1)); //dengan at kita bisa menggunakan -1 untuk mengambil index terakhir
+// console.log(arr.at(0)); //mengambil data pada index ke - 0
+// console.log(arr.at(-1)); //dengan at kita bisa menggunakan -1 untuk mengambil index terakhir
 
 /*  For Each Method  */
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-for (const [index, movement] of movements.entries()) {
-  if (movement > 0) {
-    console.log(`You deposited  ${movement}`);
-  } else {
-    console.log(`You withdrew ${-1 * movement}`);
-  }
-}
-console.log(`=========With Foreach=========`);
+// for (const [index, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`You deposited  ${movement}`);
+//   } else {
+//     console.log(`You withdrew ${-1 * movement}`);
+//   }
+// }
+// console.log(`=========With Foreach=========`);
 
 // With forEach array
 
-movements.forEach(function (movement, index, fullArray) {
-  if (movement > 0) {
-    console.log(`You deposited  ${movement}`);
-  } else {
-    console.log(`You withdrew ${-1 * movement}`);
-  }
-});
+// movements.forEach(function (movement, index, fullArray) {
+//   if (movement > 0) {
+//     console.log(`You deposited  ${movement}`);
+//   } else {
+//     console.log(`You withdrew ${-1 * movement}`);
+//   }
+// });
 
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
-/* ForEach for Maps */
+// /* ForEach for Maps */
 
-currencies.forEach(function (value, key, map) {
-  console.log(`${value} memiliki key berupa ${key}`);
-});
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${value} memiliki key berupa ${key}`);
+// });
+
+const createUsername = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(el => el[0])
+      .join('');
+  });
+  return accs;
+};
+
+accounts = createUsername(accounts);
+
+console.log(accounts);

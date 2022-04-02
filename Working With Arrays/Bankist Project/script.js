@@ -166,3 +166,28 @@ const createUsername = function (accs) {
 accounts = createUsername(accounts);
 
 console.log(accounts);
+
+const calcDisplayBalance = function (movement) {
+  const balance = movement.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = function (movement) {
+  const income = movement.filter(el => el > 0).reduce((acc, el) => acc + el, 0);
+  labelSumIn.textContent = income;
+  const outcome = movement
+    .filter(el => el < 0)
+    .reduce((acc, el) => acc + el, 0);
+  labelSumOut.textContent = -1 * outcome;
+
+  const interest = movement
+    .filter(el => el > 0)
+    .map(el => (el * 1.2) / 100)
+    .filter(el => el >= 1)
+    .reduce((accu, el) => accu + el, 0);
+  labelSumInterest.textContent = `${interest}`;
+};
+
+calcDisplaySummary(account1.movements);

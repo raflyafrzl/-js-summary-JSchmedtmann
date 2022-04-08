@@ -243,3 +243,19 @@ btnTransfer.addEventListener('click', function (ev) {
 
   inputTransferTo.value = inputTransferAmount.value = '';
 });
+
+btnClose.addEventListener('click', function (el) {
+  el.preventDefault();
+
+  if (
+    currentAccount.username === inputCloseUsername.value &&
+    currentAccount.pin === Number(inputClosePin.value)
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    accounts.splice(index, 1);
+    inputCloseUsername.value = inputClosePin.value = '';
+    containerApp.style.opacity = 0;
+  }
+});

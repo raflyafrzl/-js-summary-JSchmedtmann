@@ -276,3 +276,10 @@ btnLoan.addEventListener('click', function (el) {
   }
   inputLoanAmount.value = '';
 });
+
+const accountMovements = accounts.map(acc => acc.movements);
+
+console.log(accountMovements);
+
+const movCombined = accountMovements.flat();
+console.log(movCombined);

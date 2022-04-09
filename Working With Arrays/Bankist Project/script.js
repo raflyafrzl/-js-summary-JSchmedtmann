@@ -259,3 +259,20 @@ btnClose.addEventListener('click', function (el) {
     containerApp.style.opacity = 0;
   }
 });
+
+btnLoan.addEventListener('click', function (el) {
+  el.preventDefault();
+  const amountLoan = Number(inputLoanAmount.value);
+
+  if (
+    amountLoan > 0 &&
+    currentAccount.movements.some(mov => mov >= (amountLoan * 10) / 100)
+  ) {
+    //Add Movmements
+    currentAccount.movements.push(amountLoan);
+
+    //UpdateUI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});

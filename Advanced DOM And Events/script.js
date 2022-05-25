@@ -7,7 +7,9 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
-
+const nav_link = document.querySelector(".nav__link");
+const nav = document.querySelector(".nav");
+const nav_links = document.querySelector(".nav__links");
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -112,8 +114,26 @@ btnScrollTo.addEventListener("click", function (e) {
   section1.scrollIntoView({ behavior: "smooth" });
 });
 
+//Event Bubbling
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
 
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)} , ${randomInt(0, 255)} , ${randomInt(0, 255)})`;
+console.log(randomColor());
 
-//------ types of events and event handler
+nav_link.addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(e, this);
+  e.stopPropagation();
+});
 
+nav_links.addEventListener("click", function (e) {
+  console.log("OK!");
+  console.log(e, this);
+});
 
+nav.addEventListener("click", function (e) {
+  console.log("OK!");
+  console.log(e, this);
+});
